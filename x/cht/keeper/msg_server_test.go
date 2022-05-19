@@ -4,9 +4,9 @@ import (
 	"context"
 	"testing"
 
-	keepertest "github.com/chronicnetwork/cht/testutil/keeper"
-	"github.com/chronicnetwork/cht/x/cht/keeper"
-	"github.com/chronicnetwork/cht/x/cht/types"
+	keepertest "github.com/ChronicNetwork/cht/testutil/keeper"
+	"github.com/ChronicNetwork/cht/x/cht/keeper"
+	"github.com/ChronicNetwork/cht/x/cht/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 
