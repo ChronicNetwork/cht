@@ -1,0 +1,14 @@
+syntax = "proto3";
+package chronicnetwork.cht.cht;
+
+import "gogoproto/gogo.proto";
+import "cht/params.proto";
+// this line is used by starport scaffolding # genesis/proto/import
+
+option go_package = "github.com/chronicnetwork/cht/x/cht/types";
+
+// GenesisState defines the cht module's genesis state.
+message GenesisState {
+  Params params = 1 [(gogoproto.nullable) = false];
+  // this line is used by starport scaffolding # genesis/proto/state
+}
