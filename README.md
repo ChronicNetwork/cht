@@ -1,4 +1,4 @@
-# CHT MAINNET FREYA
+# CHT MAINNET MOROCCO-1
 
 ## Hardware Requirements
 * **Minimal**
