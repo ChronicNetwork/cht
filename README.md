@@ -24,6 +24,10 @@ sudo apt-get update && sudo apt upgrade -y
 # install toolchain and ensure accurate time synchronization 
 sudo apt-get install make build-essential gcc git jq chrony -y
 ```
+```bash:
+# install gcc & make
+sudo apt install gcc && sudo apt install make
+```
 
 #### 2. Install Go
 Follow the instructions [here](https://golang.org/doc/install) to install Go.
@@ -66,7 +70,7 @@ git checkout v1.1.0
 ```
 #### 2. Install CLI
 ```shell
-make install
+make build && make install
 ```
 
 To confirm that the installation was successful, you can run:
@@ -79,7 +83,6 @@ Output should be: `v1.1.0`
 ## Instruction for new validators
 
 ### Init
-This step is essential to init a `secp256k1` (required) key instead of `ed25519` (default)
 ```bash:
 chtd init "$MONIKER_NAME" --chain-id $CHAIN_ID
 ```
@@ -113,7 +116,7 @@ chtd keys show <key-name> -a
 
 ### Set minimum gas fees
 ```bash:
-perl -i -pe 's/^minimum-gas-prices = .+?$/minimum-gas-prices = "0.0125ucht"/' ~/.cht/config/app.toml
+perl -i -pe 's/^minimum-gas-prices = .+?$/minimum-gas-prices = "0.0125ucgas"/' ~/.cht/config/app.toml
 ```
 
 ### Add persistent peers
@@ -121,7 +124,7 @@ perl -i -pe 's/^minimum-gas-prices = .+?$/minimum-gas-prices = "0.0125ucht"/' ~/
 
 ### Download new genesis file
 ```bash:
-curl https://raw.githubusercontent.com/ChronicNetwork/net/main/mainnet/genesis.json > ~/.cht/config/genesis.json
+curl https://raw.githubusercontent.com/ChronicNetwork/net/main/mainnet/v1.1/genesis.json > ~/.cht/config/genesis.json
 ```
 
 ### Setup Unit/Daemon file
