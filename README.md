@@ -47,7 +47,7 @@ source ~/.profile
 go version
 ```
 
-Output should be: `go version go1.12.2 linux/amd64`
+Output should be: `go version go1.18.2 linux/amd64`
 
 <a id="install-chtd"></a>
 ### Install chtd from source
