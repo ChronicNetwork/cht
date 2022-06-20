@@ -1,6 +1,6 @@
 # docker build . -t chronicnetwork/chtd:latest
 # docker run --rm -it chronicnetwork/chtd:latest /bin/sh
-FROM golang:1.17-alpine3.15 AS go-builder
+FROM golang:1.18.2-alpine3.16 AS go-builder
 ARG arch=x86_64
 
 # this comes from standard alpine nightly file
@@ -34,8 +34,8 @@ FROM alpine:3.15
 
 COPY --from=go-builder /code/build/chtd /usr/bin/chtd
 
-COPY docker/* /opt/
-RUN chmod +x /opt/*.sh
+COPY --from=go-builder /code/build/chtd  /opt/
+RUN chmod +x /opt/
 
 WORKDIR /opt
 
